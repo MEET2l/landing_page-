@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="description" content="100+ Printable Learning Books for Kids Age 1-5 Years. Screen-free learning with alphabet, numbers, coloring, and more!">
-    <meta name="theme-color" content="#A28FFF">
+    <meta name="theme-color" content="#FFA500">
     <title>Kids Learning Book Bundle - Give Your Child a Smart Start!</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bubblegum+Sans&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,26 +15,29 @@
         }
 
         :root {
-            --pastel-yellow: #FFF4B7;
-            --pastel-pink: #FFD6E8;
-            --pastel-blue: #D4E9FF;
-            --pastel-green: #D4F1D4;
-            --pastel-purple: #E8D4FF;
-            --pastel-peach: #FFE5D4;
-            --bright-yellow: #FFD93D;
-            --bright-pink: #FF6B9D;
-            --bright-blue: #6BB6FF;
-            --bright-green: #6BCB77;
-            --bright-purple: #A28FFF;
-            --text-dark: #2D3748;
+            /* SpaceECE Brand Colors */
+            --primary-orange: #FFA500;
+            --primary-yellow: #FFB800;
+            --primary-black: #1a1a1a;
+            --secondary-black: #2d2d2d;
+            
+            /* Supporting Pastel Colors */
+            --pastel-yellow: #FFF4D4;
+            --pastel-orange: #FFE5CC;
+            --pastel-cream: #FFF8E7;
+            --light-gray: #f5f5f5;
+            
+            /* Text Colors */
+            --text-dark: #1a1a1a;
             --text-medium: #4A5568;
+            --text-light: #ffffff;
         }
 
         body {
             font-family: 'Quicksand', sans-serif;
             color: var(--text-dark);
             overflow-x: hidden;
-            background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-pink) 50%, var(--pastel-blue) 100%);
+            background: #ffffff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -126,89 +129,52 @@
             min-height: 100vh;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(180deg, var(--pastel-blue) 0%, var(--pastel-pink) 100%);
+            background: linear-gradient(135deg, var(--pastel-cream) 0%, var(--pastel-orange) 100%);
             padding: 80px 20px 60px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .clouds {
+        /* Decorative elements */
+        .hero-decoration {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
             pointer-events: none;
+            overflow: hidden;
         }
 
-        .cloud {
+        .circle-decoration {
             position: absolute;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 100px;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .cloud:nth-child(1) {
-            width: 120px;
-            height: 60px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .cloud:nth-child(2) {
-            width: 150px;
-            height: 70px;
-            top: 20%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .cloud:nth-child(3) {
-            width: 100px;
-            height: 50px;
-            top: 60%;
-            left: 5%;
-            animation-delay: 4s;
-        }
-
-        .cloud:nth-child(4) {
-            width: 130px;
-            height: 65px;
-            top: 70%;
-            right: 10%;
-            animation-delay: 1s;
-        }
-
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .star {
-            position: absolute;
-            color: #FFD93D;
-            font-size: 24px;
-            animation: bounce 3s ease-in-out infinite;
-        }
-
-        .star:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
-        .star:nth-child(2) { top: 25%; right: 25%; animation-delay: 1s; }
-        .star:nth-child(3) { top: 65%; left: 15%; animation-delay: 2s; }
-        .star:nth-child(4) { top: 75%; right: 20%; animation-delay: 0.5s; }
-
-        .rainbow {
-            position: absolute;
-            width: 300px;
-            height: 150px;
-            border: 15px solid transparent;
-            border-top-color: rgba(255, 107, 157, 0.3);
             border-radius: 50%;
-            top: 10%;
+            background: var(--primary-yellow);
+            opacity: 0.1;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
             right: -50px;
-            animation: float 10s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 100px;
+            left: -50px;
+            background: var(--primary-orange);
+        }
+
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
         }
 
         .hero-content {
@@ -222,17 +188,22 @@
         .hero h1 {
             font-family: 'Bubblegum Sans', cursive;
             font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--bright-purple);
-            text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.8);
+            color: var(--primary-black);
             margin-bottom: 20px;
             animation: slideInLeft 1s ease forwards;
             line-height: 1.2;
         }
 
+        .hero h1 .highlight {
+            color: var(--primary-orange);
+            position: relative;
+            display: inline-block;
+        }
+
         .hero h2 {
             font-family: 'Fredoka', sans-serif;
             font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--bright-pink);
+            color: var(--text-medium);
             margin-bottom: 30px;
             animation: slideInRight 1s ease forwards;
             animation-delay: 0.3s;
@@ -242,23 +213,23 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-purple) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%);
+            color: var(--primary-black);
             font-family: 'Fredoka', sans-serif;
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            font-weight: 600;
+            font-weight: 700;
             padding: 20px 50px;
             border-radius: 50px;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.4);
             transition: all 0.3s ease;
             animation: pulse 2s ease-in-out infinite;
-            border: 4px solid white;
+            border: none;
         }
 
         .cta-button:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+            box-shadow: 0 15px 40px rgba(255, 165, 0, 0.6);
         }
 
         .book-mockups {
@@ -277,7 +248,7 @@
         .book-3d {
             width: 180px;
             height: 240px;
-            background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--bright-green) 100%);
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%);
             border-radius: 10px;
             box-shadow: 
                 10px 10px 20px rgba(0,0,0,0.2),
@@ -291,24 +262,11 @@
             justify-content: center;
             font-family: 'Bubblegum Sans', cursive;
             font-size: 1.2rem;
-            color: white;
+            color: var(--primary-black);
             text-align: center;
             padding: 20px;
-            border: 5px solid white;
+            border: 5px solid var(--primary-black);
             overflow: hidden;
-        }
-
-        .book-3d::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-            border-radius: 5px;
         }
 
         .book-cover-illustration {
@@ -319,22 +277,13 @@
             align-items: center;
             justify-content: center;
             font-size: 5rem;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.3);
             border-radius: 10px;
             backdrop-filter: blur(5px);
         }
 
-        .book-3d:nth-child(1) {
-            background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-purple) 100%);
-        }
-
         .book-3d:nth-child(2) {
-            background: linear-gradient(135deg, var(--bright-blue) 0%, var(--bright-green) 100%);
             transform: translateY(-20px);
-        }
-
-        .book-3d:nth-child(3) {
-            background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--bright-pink) 100%);
         }
 
         .book-3d:hover {
@@ -357,13 +306,16 @@
             font-size: clamp(2rem, 5vw, 3.5rem);
             text-align: center;
             margin-bottom: 50px;
-            color: var(--bright-purple);
-            text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.6);
+            color: var(--primary-black);
+        }
+
+        .section-title .highlight {
+            color: var(--primary-orange);
         }
 
         /* What's Inside Section */
         .whats-inside {
-            background: linear-gradient(135deg, var(--pastel-green) 0%, var(--pastel-yellow) 100%);
+            background: var(--light-gray);
         }
 
         .book-grid {
@@ -380,7 +332,7 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border: 4px solid var(--bright-blue);
+            border: 4px solid var(--primary-orange);
             position: relative;
             overflow: hidden;
         }
@@ -392,7 +344,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255,165,0,0.1), transparent);
             transform: rotate(45deg);
             transition: all 0.5s ease;
         }
@@ -410,14 +362,14 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-purple) 100%);
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(255,165,0,0.3);
         }
 
         .book-icon::after {
@@ -429,17 +381,10 @@
             animation: bounce 2s ease-in-out infinite;
         }
 
-        .book-card:nth-child(1) .book-icon { background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-purple) 100%); }
-        .book-card:nth-child(2) .book-icon { background: linear-gradient(135deg, var(--bright-blue) 0%, var(--bright-green) 100%); }
-        .book-card:nth-child(3) .book-icon { background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--bright-pink) 100%); }
-        .book-card:nth-child(4) .book-icon { background: linear-gradient(135deg, var(--bright-green) 0%, var(--bright-blue) 100%); }
-        .book-card:nth-child(5) .book-icon { background: linear-gradient(135deg, var(--bright-purple) 0%, var(--bright-pink) 100%); }
-        .book-card:nth-child(6) .book-icon { background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-yellow) 100%); }
-
         .book-card h3 {
             font-family: 'Fredoka', sans-serif;
             font-size: 1.4rem;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             margin-bottom: 10px;
         }
 
@@ -451,7 +396,7 @@
 
         /* Benefits Section */
         .benefits {
-            background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-purple) 100%);
+            background: var(--pastel-cream);
         }
 
         .benefits-grid {
@@ -470,19 +415,19 @@
             gap: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            border: 3px solid var(--bright-green);
+            border: 3px solid var(--primary-orange);
         }
 
         .benefit-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(255,165,0,0.2);
         }
 
         .benefit-icon {
             font-size: 2.5rem;
             min-width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--bright-green) 100%);
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -491,7 +436,7 @@
 
         .benefit-text h3 {
             font-family: 'Fredoka', sans-serif;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             margin-bottom: 8px;
             font-size: 1.3rem;
         }
@@ -503,7 +448,7 @@
 
         /* Preview Section */
         .preview {
-            background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-green) 100%);
+            background: white;
         }
 
         .preview-grid {
@@ -519,7 +464,7 @@
             padding: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
-            border: 5px solid var(--bright-pink);
+            border: 5px solid var(--primary-black);
         }
 
         .preview-book:hover {
@@ -529,7 +474,7 @@
         .preview-image {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-pink) 50%, var(--pastel-blue) 100%);
+            background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-orange) 100%);
             border-radius: 15px;
             display: flex;
             flex-direction: column;
@@ -537,7 +482,7 @@
             justify-content: center;
             font-size: 4rem;
             margin-bottom: 20px;
-            border: 3px solid white;
+            border: 3px solid var(--primary-orange);
             position: relative;
             overflow: hidden;
         }
@@ -551,7 +496,7 @@
             bottom: 10px;
             background: white;
             border-radius: 10px;
-            border: 2px dashed #ccc;
+            border: 2px dashed var(--primary-orange);
         }
 
         .preview-content {
@@ -573,20 +518,21 @@
 
         .preview-line {
             height: 3px;
-            background: #ddd;
+            background: var(--primary-orange);
             border-radius: 2px;
+            opacity: 0.3;
         }
 
         .preview-book h3 {
             font-family: 'Fredoka', sans-serif;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             text-align: center;
             font-size: 1.5rem;
         }
 
         /* Bonus Section */
         .bonus {
-            background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-peach) 100%);
+            background: var(--pastel-orange);
         }
 
         .bonus-grid {
@@ -603,21 +549,21 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
-            border: 4px solid var(--bright-yellow);
+            border: 4px solid var(--primary-black);
         }
 
         .bonus-badge {
             position: absolute;
             top: -15px;
             right: 20px;
-            background: var(--bright-pink);
-            color: white;
+            background: var(--primary-orange);
+            color: var(--primary-black);
             padding: 8px 20px;
             border-radius: 20px;
             font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 5px 15px rgba(255,165,0,0.4);
         }
 
         .bonus-icon {
@@ -630,26 +576,26 @@
         .bonus-preview {
             width: 100%;
             height: 120px;
-            background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-pink) 100%);
+            background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-cream) 100%);
             border-radius: 15px;
             margin: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid white;
+            border: 2px solid var(--primary-orange);
             font-size: 2rem;
         }
 
         .bonus-card h3 {
             font-family: 'Fredoka', sans-serif;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             margin-bottom: 10px;
             font-size: 1.4rem;
         }
 
         /* Testimonials */
         .testimonials {
-            background: linear-gradient(135deg, var(--pastel-purple) 0%, var(--pastel-pink) 100%);
+            background: var(--light-gray);
         }
 
         .testimonial-grid {
@@ -664,7 +610,7 @@
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 3px solid var(--bright-blue);
+            border: 3px solid var(--primary-orange);
         }
 
         .testimonial-header {
@@ -677,23 +623,23 @@
         .testimonial-avatar {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-purple) 100%);
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-yellow) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            color: white;
+            color: var(--primary-black);
         }
 
         .testimonial-info h4 {
             font-family: 'Fredoka', sans-serif;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             margin-bottom: 5px;
         }
 
         .stars {
-            color: var(--bright-yellow);
+            color: var(--primary-orange);
             font-size: 1.2rem;
         }
 
@@ -705,14 +651,17 @@
 
         /* Offer Section */
         .offer {
-            background: linear-gradient(135deg, var(--bright-pink) 0%, var(--bright-purple) 100%);
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
             color: white;
             text-align: center;
         }
 
         .offer .section-title {
             color: white;
-            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer .section-title .highlight {
+            color: var(--primary-orange);
         }
 
         .price-box {
@@ -722,7 +671,7 @@
             max-width: 600px;
             margin: 0 auto;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border: 6px solid var(--bright-yellow);
+            border: 6px solid var(--primary-orange);
         }
 
         .old-price {
@@ -735,19 +684,18 @@
         .new-price {
             font-size: 4rem;
             font-family: 'Bubblegum Sans', cursive;
-            color: var(--bright-pink);
+            color: var(--primary-orange);
             margin: 20px 0;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
         .discount-badge {
             display: inline-block;
-            background: var(--bright-green);
-            color: white;
+            background: var(--primary-orange);
+            color: var(--primary-black);
             padding: 10px 30px;
             border-radius: 25px;
             font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
@@ -769,7 +717,7 @@
         .countdown-number {
             font-family: 'Bubblegum Sans', cursive;
             font-size: 2.5rem;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             display: block;
         }
 
@@ -781,7 +729,7 @@
 
         /* FAQ Section */
         .faq {
-            background: linear-gradient(135deg, var(--pastel-green) 0%, var(--pastel-blue) 100%);
+            background: var(--pastel-cream);
         }
 
         .faq-container {
@@ -795,13 +743,13 @@
             margin-bottom: 20px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 3px solid var(--bright-purple);
+            border: 3px solid var(--primary-orange);
         }
 
         .faq-question {
             font-family: 'Fredoka', sans-serif;
             font-size: 1.2rem;
-            color: var(--bright-purple);
+            color: var(--primary-black);
             padding: 20px 30px;
             cursor: pointer;
             display: flex;
@@ -811,7 +759,7 @@
         }
 
         .faq-question:hover {
-            background: var(--pastel-purple);
+            background: var(--pastel-yellow);
         }
 
         .faq-answer {
@@ -827,7 +775,9 @@
 
         .faq-toggle {
             font-size: 1.5rem;
+            color: var(--primary-orange);
             transition: transform 0.3s ease;
+            font-weight: bold;
         }
 
         .faq-item.active .faq-toggle {
@@ -836,7 +786,7 @@
 
         /* Footer */
         footer {
-            background: var(--text-dark);
+            background: var(--primary-black);
             color: white;
             padding: 50px 20px 30px;
             text-align: center;
@@ -849,14 +799,15 @@
 
         .guarantee-badge {
             display: inline-block;
-            background: var(--bright-green);
+            background: var(--primary-orange);
+            color: var(--primary-black);
             padding: 15px 30px;
             border-radius: 50px;
             margin-bottom: 30px;
             font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(107, 203, 119, 0.4);
+            box-shadow: 0 10px 30px rgba(255,165,0,0.4);
         }
 
         .contact-info {
@@ -865,7 +816,7 @@
         }
 
         .contact-info a {
-            color: var(--bright-yellow);
+            color: var(--primary-orange);
             text-decoration: none;
         }
 
@@ -920,14 +871,6 @@
                 font-size: 3rem;
             }
 
-            .cloud {
-                display: none;
-            }
-
-            .floating-emoji {
-                font-size: 2rem;
-            }
-
             .section-title {
                 font-size: 1.8rem;
                 margin-bottom: 30px;
@@ -964,10 +907,6 @@
 
             .preview-image {
                 height: 200px;
-            }
-
-            .preview-content > div:first-child {
-                font-size: 3rem !important;
             }
 
             .bonus-icon {
@@ -1038,6 +977,10 @@
 
             .contact-info {
                 font-size: 0.95rem;
+            }
+
+            .circle-decoration {
+                display: none;
             }
         }
 
@@ -1230,18 +1173,41 @@
             .book-mockups {
                 margin-top: 20px;
             }
+        }
 
-            .floating-emoji {
-                display: none;
+        @media (max-width: 330px) {
+            .book-3d {
+                width: 130px;
+                height: 158px;
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+
+            .book-cover-illustration span {
+                font-size: 3rem !important;
+            }
+
+            .book-cover-illustration {
+                height: 71px;
+            }
+
+            .book-cover-illustration span {
+                font-size: 2rem !important;
+            }
+            .book_info {
+                margin: 10px 0px 0px 0px;
+                font-size: 15px;
+            }
+
+            .cta-button {
+                margin-bottom: 50px;
             }
         }
 
         /* Print Styles */
         @media print {
-            .floating-emoji,
-            .clouds,
-            .stars,
-            .rainbow {
+            .hero-decoration,
+            .circle-decoration {
                 display: none;
             }
 
@@ -1253,48 +1219,20 @@
                 page-break-inside: avoid;
             }
         }
-
-        /* Floating elements */
-        .floating-emoji {
-            position: fixed;
-            font-size: 3rem;
-            pointer-events: none;
-            z-index: 1000;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .emoji-1 { top: 20%; left: 5%; animation-delay: 0s; }
-        .emoji-2 { top: 40%; right: 5%; animation-delay: 2s; }
-        .emoji-3 { bottom: 20%; left: 8%; animation-delay: 4s; }
-        .emoji-4 { bottom: 30%; right: 7%; animation-delay: 1s; }
     </style>
 </head>
 <body>
-    <!-- Floating Emojis -->
-    <div class="floating-emoji emoji-1">🎨</div>
-    <div class="floating-emoji emoji-2">📚</div>
-    <div class="floating-emoji emoji-3">✨</div>
-    <div class="floating-emoji emoji-4">🌈</div>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="clouds">
-            <div class="cloud"></div>
-            <div class="cloud"></div>
-            <div class="cloud"></div>
-            <div class="cloud"></div>
+        <div class="hero-decoration">
+            <div class="circle-decoration circle-1"></div>
+            <div class="circle-decoration circle-2"></div>
+            <div class="circle-decoration circle-3"></div>
         </div>
-        <div class="stars">
-            <div class="star">⭐</div>
-            <div class="star">✨</div>
-            <div class="star">⭐</div>
-            <div class="star">✨</div>
-        </div>
-        <div class="rainbow"></div>
         
         <div class="hero-content">
-            <h1>Give Your Child a Smart Start in Life!</h1>
-            <h2>100+ Printable Learning Books for Kids</h2>
+            <h1>Give Your Child a <span class="highlight">Smart Start</span> in Life!</h1>
+            <h2>100+ Printable Learning Books for 1–5 Year Kids</h2>
             <a href="#offer" class="cta-button">Get Instant Access Now 🎁</a>
             
             <div class="book-mockups">
@@ -1305,7 +1243,7 @@
                             <span style="font-size: 2rem;">🅰️🅱️</span>
                         </div>
                     </div>
-                    <div style="position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">ABC Book</div>
+                    <div class="book_info" style="position: relative; z-index: 1; font-weight: 700;">ABC Book</div>
                 </div>
                 <div class="book-3d">
                     <div class="book-cover-illustration">
@@ -1314,7 +1252,7 @@
                             <span style="font-size: 2rem;">1️⃣2️⃣3️⃣</span>
                         </div>
                     </div>
-                    <div style="position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">123 Book</div>
+                    <div class="book_info" style="position: relative; z-index: 1; font-weight: 700;">123 Book</div>
                 </div>
                 <div class="book-3d">
                     <div class="book-cover-illustration">
@@ -1323,7 +1261,7 @@
                             <span style="font-size: 2rem;">🎨🖍️</span>
                         </div>
                     </div>
-                    <div style="position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Color Book</div>
+                    <div class="book_info" style="position: relative; z-index: 1; font-weight: 700;">Color Book</div>
                 </div>
             </div>
         </div>
@@ -1332,7 +1270,7 @@
     <!-- What's Inside Section -->
     <section class="whats-inside">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">What's Inside the Bundle? 📚</h2>
+            <h2 class="section-title animate-on-scroll">What's Inside the <span class="highlight">Bundle?</span> 📚</h2>
             
             <div class="book-grid">
                 <div class="book-card animate-on-scroll" style="animation-delay: 0.1s;">
@@ -1377,7 +1315,7 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Why Parents Love This Bundle ❤️</h2>
+            <h2 class="section-title animate-on-scroll">Why Parents <span class="highlight">Love</span> This Bundle ❤️</h2>
             
             <div class="benefits-grid">
                 <div class="benefit-item animate-on-scroll" style="animation-delay: 0.1s;">
@@ -1426,14 +1364,14 @@
     <!-- Book Preview Section -->
     <section class="preview">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Sneak Peek Inside 👀</h2>
+            <h2 class="section-title animate-on-scroll">Sneak Peek <span class="highlight">Inside</span> 👀</h2>
             
             <div class="preview-grid">
                 <div class="preview-book animate-on-scroll" style="animation-delay: 0.1s;">
-                    <div class="preview-image" style="background: linear-gradient(135deg, #FFE5E5 0%, #FFF4E5 100%);">
+                    <div class="preview-image">
                         <div class="preview-content">
                             <div style="font-size: 5rem;">🦁</div>
-                            <div style="font-size: 3rem; font-family: 'Bubblegum Sans', cursive; color: var(--bright-purple);">Aa</div>
+                            <div style="font-size: 3rem; font-family: 'Bubblegum Sans', cursive; color: var(--primary-black);">Aa</div>
                             <div style="font-size: 1.2rem; color: var(--text-medium); font-weight: 600;">A is for Apple</div>
                             <div class="preview-lines">
                                 <div class="preview-line"></div>
@@ -1446,10 +1384,10 @@
                 </div>
                 
                 <div class="preview-book animate-on-scroll" style="animation-delay: 0.2s;">
-                    <div class="preview-image" style="background: linear-gradient(135deg, #E5F4FF 0%, #E5FFE5 100%);">
+                    <div class="preview-image">
                         <div class="preview-content">
                             <div style="font-size: 5rem;">🐻</div>
-                            <div style="font-size: 4rem; font-family: 'Bubblegum Sans', cursive; color: var(--bright-blue);">1 2 3</div>
+                            <div style="font-size: 4rem; font-family: 'Bubblegum Sans', cursive; color: var(--primary-black);">1 2 3</div>
                             <div style="display: flex; gap: 10px; font-size: 2rem; margin-top: 10px;">
                                 <span>⭐</span><span>⭐</span><span>⭐</span>
                             </div>
@@ -1463,15 +1401,15 @@
                 </div>
                 
                 <div class="preview-book animate-on-scroll" style="animation-delay: 0.3s;">
-                    <div class="preview-image" style="background: linear-gradient(135deg, #FFE5F4 0%, #F4E5FF 100%);">
+                    <div class="preview-image">
                         <div class="preview-content">
                             <div style="font-size: 5rem;">🦄</div>
                             <div style="display: flex; gap: 15px; font-size: 2rem; margin-top: 10px;">
-                                <span style="color: var(--bright-pink);">🎨</span>
-                                <span style="color: var(--bright-blue);">🖍️</span>
-                                <span style="color: var(--bright-yellow);">✏️</span>
+                                <span style="color: var(--primary-orange);">🎨</span>
+                                <span style="color: var(--primary-orange);">🖍️</span>
+                                <span style="color: var(--primary-orange);">✏️</span>
                             </div>
-                            <div style="margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.5); border-radius: 10px; font-size: 1rem; color: var(--text-medium); font-weight: 600;">
+                            <div style="margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.7); border-radius: 10px; font-size: 1rem; color: var(--text-medium); font-weight: 600;">
                                 Color Me! 🌈
                             </div>
                         </div>
@@ -1485,7 +1423,7 @@
     <!-- Bonus Section -->
     <section class="bonus">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">BONUS Gifts Worth ₹1,500! 🎁</h2>
+            <h2 class="section-title animate-on-scroll"><span class="highlight">BONUS</span> Gifts Worth ₹1,500! 🎁</h2>
             
             <div class="bonus-grid">
                 <div class="bonus-card animate-on-scroll" style="animation-delay: 0.1s;">
@@ -1531,7 +1469,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Happy Parents, Happy Kids! 🌟</h2>
+            <h2 class="section-title animate-on-scroll">Happy Parents, <span class="highlight">Happy Kids!</span> 🌟</h2>
             
             <div class="testimonial-grid">
                 <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.1s;">
@@ -1573,7 +1511,7 @@
     <!-- Offer Section -->
     <section id="offer" class="offer">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Limited Time Offer! ⏰</h2>
+            <h2 class="section-title animate-on-scroll">Limited Time <span class="highlight">Offer!</span> ⏰</h2>
             
             <div class="price-box animate-on-scroll">
                 <p class="old-price">₹2,999</p>
@@ -1603,7 +1541,7 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Frequently Asked Questions 🤔</h2>
+            <h2 class="section-title animate-on-scroll">Frequently Asked <span class="highlight">Questions</span> 🤔</h2>
             
             <div class="faq-container">
                 <div class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
@@ -1667,11 +1605,12 @@
             </div>
             
             <div class="contact-info">
-                📧 Email: <a href="mailto:support@kidslearningbundle.com">support@kidslearningbundle.com</a><br>
+                📧 Email: <a href="mailto:support@spaceece.com">support@spaceece.com</a><br>
+                <!-- 📱 WhatsApp: <a href="tel:+919876543210">+91 98765 43210</a> -->
             </div>
             
             <div class="copyright">
-                <p>© 2026 Kids Learning Bundle. All Rights Reserved.</p>
+                <p>© 2026 SpaceECE Kids Learning Bundle. All Rights Reserved.</p>
                 <p>Give your child the gift of learning! 🎓✨</p>
             </div>
         </div>
